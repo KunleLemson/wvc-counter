@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WVC-Counter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="tab">
+    <button class="tablinks" onclick="openCounter(event, 'word')" id="defaultOpen"
+      >
+      Words Counter
+    </button>
+    <button class="tablinks" onclick="openCounter(event, 'vc')">
+      V/C Counter
+    </button>
+  </div>
+
+  <div class="container" id="word">
+    <p class="header">
+      Words Counter
+    </p>
+    <textarea
+      id="w-input"
+      placeholder="Start typing or paste sentence...."
+      ></textarea>
+    <br /><br /><br />
+    <div class="display">
+      <div id="w-input-count" class="input-count">
+        <span>0 word</span>
+      </div>
+      <p class="input-text" id="w-input-text">
+        No word to count :(
+      </p>
+    </div>
+  </div>
+
+  <div class="container" id="vc">
+    <p class="header">
+      V/C-Counter
+    </p>
+    <textarea
+      id="vc-input"
+      placeholder="Start typing or paste sensente...."
+      ></textarea>
+    <input type="button" value="Check" id="check" class="check" />
+    <br /><br /><br />
+    <div class="display">
+      <div id="vc-input-count" class="input-count">
+        <span>0</span>
+      </div>
+      <p class="input-text" id="vc-input-text">
+        No input to be evaluated yet :(
+      </p>
+    </div>
+  </div>
+
+  <script>
+  </script>
+
+  <script src="./script-wc.js"></script>
+  <script src="./script-vc.js"></script>
+</body>
+</html>
