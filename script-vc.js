@@ -1,14 +1,14 @@
 let vcInput = document.getElementById("vc-input");
 let check = document.getElementById("check");
 
-check.addEventListener("click", checkLength);
+vcInput.addEventListener("input", checkLength);
 
 function checkLength(e) {
   let vcounter = 0;
   let ccounter = 0;
   loop = vcInput.value.split("");
-  loop.forEach((element) => {
-    switch (element) {
+  loop.forEach((alphabet) => {
+    switch (alphabet) {
       case "a":
       case "e":
       case "i":
@@ -71,12 +71,28 @@ function checkLength(e) {
   e.preventDefault();
   });
 
+  let counterSingularPlural = " ";
+  function bypassScope(counter) {
+    if (counter == 0) {
+      counterSingularPlural = "";
+      return counterSingularPlural;
+    } else if (counter == 1) {
+      counterSingularPlural = "";
+      return counterSingularPlural;
+    } else if (counter > 1) {
+      counterSingularPlural = "s";
+      return counterSingularPlural;
+    }
+  }
+  let vscope = bypassScope(vcounter)
+  let cscope = bypassScope(ccounter)
+// console.log(scope)
   document.getElementById("vc-input-text").innerHTML =
     "Your input has: <b>" +
     vcounter +
-    "</b> vowel(s) & <b>" +
+    " </b> vowel" + vscope + " & <b>" +
     ccounter +
-    "</b> consonant(s).";
+    "</b> consonant"+cscope+".";
   document.getElementById("vc-input-count").innerHTML = vcounter + ccounter;
   if (vcInput.value == "") {
     document.getElementById("vc-input-count").innerHTML = "0";
@@ -84,3 +100,5 @@ function checkLength(e) {
       "No input to be evaluated, try again :(";
   }
 }
+
+checkLength()

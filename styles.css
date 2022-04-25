@@ -82,6 +82,7 @@ textarea:focus {
   background-color: teal;
   margin: 5px auto;
   border: none;
+  border-radius: 35px;
   color: white;
   cursor: pointer;
 }
@@ -94,7 +95,7 @@ textarea:focus {
 .display {
   position: relative;
   border: 1px solid teal;
-  border-radius: 35px 0 0 0;
+  /* border-radius: 35px 0 0 0; */
   padding: 0 10px;
 }
 

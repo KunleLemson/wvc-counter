@@ -1,4 +1,4 @@
-alert("• Words counter counts the words in the given sentence on the go • V/C counter counts vowels and consonants in the given sentence and gives the total alphabets just above");
+// alert("• Words counter counts the words in the given sentence on the go \n\n • Vowels/Consonants counter counts vowels and consonants in the given sentence and gives the total alphabets just above");
 let wInput = document.getElementById("w-input");
 
 wInput.addEventListener("input", checkLength);
@@ -6,6 +6,10 @@ wInput.addEventListener("input", checkLength);
 function checkLength(e) {
   e.preventDefault();
   var arr = wInput.value.split(" ");
+
+  arr = arr.filter(function(str) {
+    return str != ""
+  })
   
   if (arr.length == 1) {
     document.getElementById("w-input-count").innerHTML = arr.length + " word";
@@ -19,7 +23,7 @@ function checkLength(e) {
   }
 }
 
-function openCounter(evt, cityName) {
+function openCounter(evt, tab) {
   var i, container, tablinks;
 
   container = document.getElementsByClassName("container");
@@ -32,8 +36,9 @@ function openCounter(evt, cityName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(tab).style.display = "block";
   evt.currentTarget.className += " active";
 }
 
 document.getElementById("defaultOpen").click();
+document.addEventListener('loadstart',checkLength)
