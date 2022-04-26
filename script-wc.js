@@ -1,4 +1,4 @@
-// alert("• Words counter counts the words in the given sentence on the go \n\n • Vowels/Consonants counter counts vowels and consonants in the given sentence and gives the total alphabets just above");
+alert("• Words counter counts the words in the given sentence on the go \n\n • Vowels/Consonants counter counts vowels and consonants in the given sentence and gives the total alphabets just above");
 let wInput = document.getElementById("w-input");
 
 wInput.addEventListener("input", checkLength);
